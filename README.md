@@ -86,5 +86,7 @@
 # Promptflow architecture (RAG, FAISS-base)
 ![image](./images/Screenshot%20from%202023-12-03%2013-35-26.png)
 
-- 
+- Feature
+    - Intent-wise encoding to obtain respective embeddings
+    - Take average embeddings between given number of embeddings (=given sentences in user query) to find resonable context representation in 1536 by using `text-embedding-ada-002`
 
