@@ -79,5 +79,5 @@ nodes:
     question: ${inputs.question}
     deployment_name: seveneleven-gpt35turb16k
     temperature: 0.5
-  connection: Default_AzureOpenAI
+  connection: connection_name_of_azure_open_ai
   api: chat

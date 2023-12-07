@@ -47,7 +47,7 @@ Why I was required to develop promptflow on local machine even though is "Azure 
     Edit \<your connection\>.yaml as following:
     ```
     $schema: https://azuremlschemas.azureedge.net/promptflow/latest/AzureOpenAIConnection.schema.json
-        name: open_ai_connection
+        name: connection_name_of_azure_open_ai
         type: azure_open_ai
         api_key: <test_key>
         api_base: <test_base>
