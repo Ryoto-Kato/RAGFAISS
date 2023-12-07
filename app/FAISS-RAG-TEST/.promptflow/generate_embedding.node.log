@@ -1,0 +1,36 @@
+2023-12-02 18:17:06 +0100    8898 execution.flow     INFO     Executing node generate_embedding. node run id: a0732f01-ecfe-4bad-8c29-c47b90b90b0c_generate_embedding_539a26c7-8c8a-4f72-a158-9e0885e48cb4
+2023-12-02 18:17:06 +0100    8898 execution          WARNING  [generate_embedding in line None (index starts from 0)] stderr> Exception occurs: BadRequestError: Error code: 400 - {'error': {'message': "'$.input' is invalid. Please check the API reference: https://platform.openai.com/docs/api-reference.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2023-12-02 18:17:06 +0100    8898 execution          ERROR    Node generate_embedding in line None failed. Exception: OpenAI API hits BadRequestError: Error code: 400 - {'error': {'message': "'$.input' is invalid. Please check the API reference: https://platform.openai.com/docs/api-reference.", 'type': 'invalid_request_error', 'param': None, 'code': None}} [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors].
+Traceback (most recent call last):
+  File "/home/ryotok/anaconda3/envs/hackathon3/lib/python3.9/site-packages/promptflow/tools/common.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ryotok/anaconda3/envs/hackathon3/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return client.embeddings.create(
+  File "/home/ryotok/anaconda3/envs/hackathon3/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 93, in wrapper
+    return f(*args, **kwargs)
+  File "/home/ryotok/anaconda3/envs/hackathon3/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 47, in wrapped_method
+    result = f(*args, **kwargs)
+  File "/home/ryotok/anaconda3/envs/hackathon3/lib/python3.9/site-packages/openai/resources/embeddings.py", line 105, in create
+    return self._post(
+  File "/home/ryotok/anaconda3/envs/hackathon3/lib/python3.9/site-packages/openai/_base_client.py", line 1096, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/ryotok/anaconda3/envs/hackathon3/lib/python3.9/site-packages/openai/_base_client.py", line 856, in request
+    return self._request(
+  File "/home/ryotok/anaconda3/envs/hackathon3/lib/python3.9/site-packages/openai/_base_client.py", line 908, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "'$.input' is invalid. Please check the API reference: https://platform.openai.com/docs/api-reference.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ryotok/anaconda3/envs/hackathon3/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 89, in invoke_tool
+    result = self._invoke_tool_with_timer(node, f, kwargs)
+  File "/home/ryotok/anaconda3/envs/hackathon3/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 191, in _invoke_tool_with_timer
+    raise e
+  File "/home/ryotok/anaconda3/envs/hackathon3/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 185, in _invoke_tool_with_timer
+    return f(**kwargs)
+  File "/home/ryotok/anaconda3/envs/hackathon3/lib/python3.9/site-packages/promptflow/_core/tool.py", line 100, in decorated_tool
+    output = func(*args, **kwargs)
+  File "/home/ryotok/anaconda3/envs/hackathon3/lib/python3.9/site-packages/promptflow/tools/common.py", line 211, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits BadRequestError: Error code: 400 - {'error': {'message': "'$.input' is invalid. Please check the API reference: https://platform.openai.com/docs/api-reference.", 'type': 'invalid_request_error', 'param': None, 'code': None}} [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]

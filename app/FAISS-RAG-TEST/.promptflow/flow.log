@@ -1,0 +1,19 @@
+2023-12-03 10:34:55 +0100   26039 execution.flow     INFO     Start executing nodes in thread pool mode.
+2023-12-03 10:34:55 +0100   26039 execution.flow     INFO     Start to run 7 nodes with concurrency level 16.
+2023-12-03 10:34:55 +0100   26039 execution.flow     INFO     Executing node DetermineIntent. node run id: 42e9bc4f-b4c3-441b-a5fe-ec1b478f9441_DetermineIntent_0
+2023-12-03 10:34:56 +0100   26039 execution.flow     INFO     Node DetermineIntent completes.
+2023-12-03 10:34:56 +0100   26039 execution.flow     INFO     Executing node ExtractIntent. node run id: 42e9bc4f-b4c3-441b-a5fe-ec1b478f9441_ExtractIntent_0
+2023-12-03 10:34:56 +0100   26039 execution.flow     INFO     Node ExtractIntent completes.
+2023-12-03 10:34:56 +0100   26039 execution.flow     INFO     Executing node IntentWise_embeddings_generator. node run id: 42e9bc4f-b4c3-441b-a5fe-ec1b478f9441_IntentWise_embeddings_generator_0
+2023-12-03 10:34:56 +0100   26039 execution.flow     INFO     [IntentWise_embeddings_generator in line 0 (index starts from 0)] stdout> 1
+2023-12-03 10:34:56 +0100   26039 execution.flow     INFO     [IntentWise_embeddings_generator in line 0 (index starts from 0)] stdout> (1, 1536)
+2023-12-03 10:34:56 +0100   26039 execution.flow     INFO     Node IntentWise_embeddings_generator completes.
+2023-12-03 10:34:56 +0100   26039 execution.flow     INFO     Executing node lookup. node run id: 42e9bc4f-b4c3-441b-a5fe-ec1b478f9441_lookup_0
+2023-12-03 10:34:57 +0100   26039 execution.flow     INFO     Node lookup completes.
+2023-12-03 10:34:57 +0100   26039 execution.flow     INFO     Executing node format_context. node run id: 42e9bc4f-b4c3-441b-a5fe-ec1b478f9441_format_context_0
+2023-12-03 10:34:57 +0100   26039 execution.flow     INFO     Node format_context completes.
+2023-12-03 10:34:57 +0100   26039 execution.flow     INFO     Executing node answer_the_question_with_context. node run id: 42e9bc4f-b4c3-441b-a5fe-ec1b478f9441_answer_the_question_with_context_0
+2023-12-03 10:34:58 +0100   26039 execution.flow     INFO     Node answer_the_question_with_context completes.
+2023-12-03 10:34:58 +0100   26039 execution.flow     INFO     Executing node endpoint_getResponse. node run id: 42e9bc4f-b4c3-441b-a5fe-ec1b478f9441_endpoint_getResponse_0
+2023-12-03 10:34:58 +0100   26039 execution.flow     WARNING  Output of endpoint_getResponse is not json serializable, use str to store it.
+2023-12-03 10:34:58 +0100   26039 execution.flow     INFO     Node endpoint_getResponse completes.

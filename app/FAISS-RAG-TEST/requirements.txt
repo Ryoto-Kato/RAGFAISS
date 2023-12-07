@@ -1,0 +1,7 @@
+promptflow
+promptflow-tools
+promptflow_vectordb
+numpy
+openai
+faiss-cpu == 1.7.4
+langchain

@@ -1,0 +1,3 @@
+2023-12-02 18:31:08 +0100   10892 execution.flow     INFO     Executing node ExtractIntent. node run id: 928419bd-a995-4428-9523-6e3aafcf1aae_ExtractIntent_385ad2ef-b986-4c29-89cd-ccdb6576cefb
+2023-12-02 18:31:08 +0100   10892 execution.flow     INFO     [ExtractIntent in line None (index starts from 0)] stdout>  ["what is AML SDK V2?", "should I use AML SDK V1 or V2?"]
+2023-12-02 18:31:08 +0100   10892 execution.flow     INFO     Node ExtractIntent completes.

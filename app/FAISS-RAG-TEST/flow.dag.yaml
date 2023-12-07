@@ -1,0 +1,83 @@
+id: qna_with_your_own_data_using_faiss_index
+name: QnA with Your Own Data Using Faiss Index
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  question:
+    type: string
+    default: which program is the best to study Management?How much credits do we
+      need to obtain for graduation?
+    is_chat_history: false
+    is_chat_input: true
+  chat_history:
+    type: list
+    default: []
+    is_chat_history: true
+    is_chat_input: false
+outputs:
+  output:
+    type: string
+    reference: ${answer_the_question_with_context.output}
+nodes:
+- name: IntentDetermination
+  type: llm
+  source:
+    type: code
+    path: DetermineIntent.jinja2
+  inputs:
+    deployment_name: seveneleven-gpt35turb16k
+    max_tokens: 800
+    query: ${inputs.question}
+    chat_history: ${inputs.chat_history}
+  connection: Default_AzureOpenAI
+  api: chat
+- name: IntentExtraction
+  type: python
+  source:
+    type: code
+    path: ExtractIntent.py
+  inputs:
+    input: ${IntentDetermination.output}
+    query: ${inputs.question}
+- name: IntentWise_embeddings_generator
+  type: python
+  source:
+    type: code
+    path: IntentWise_embeddings_generator.py
+  inputs:
+    input1: ${IntentExtraction.output}
+- name: lookup
+  type: python
+  source:
+    type: package
+    tool: promptflow_vectordb.tool.faiss_index_lookup.FaissIndexLookup.search
+  inputs:
+    path: ./data/index_16_167_2021_Modulehandbook_Masters_Program_Finance_and_Information_Management
+    vector: ${IntentWise_embeddings_generator.output}
+    top_k: 3
+- name: format_context
+  type: python
+  source:
+    type: code
+    path: format_context.py
+  inputs:
+    search_result: ${lookup.output}
+- name: endpoint_getResponse
+  type: python
+  source:
+    type: code
+    path: endpoint_getResponse.py
+  inputs:
+    input1: ${answer_the_question_with_context.output}
+- name: answer_the_question_with_context
+  type: llm
+  source:
+    type: code
+    path: answer_the_question_with_context.jinja2
+  inputs:
+    contexts: ${format_context.output}
+    question: ${inputs.question}
+    deployment_name: seveneleven-gpt35turb16k
+    temperature: 0.5
+  connection: Default_AzureOpenAI
+  api: chat
