@@ -1,4 +1,0 @@
-2023-12-02 22:54:06 +0100   47463 execution.flow     INFO     Executing node IntentWise_embeddings_generator. node run id: 95178a03-9405-44f6-b964-fb009e374b83_IntentWise_embeddings_generator_1a04c9ec-b8de-4a08-8989-eb3cc7422902
-2023-12-02 22:54:06 +0100   47463 execution.flow     INFO     [IntentWise_embeddings_generator in line None (index starts from 0)] stdout> 2
-2023-12-02 22:54:07 +0100   47463 execution.flow     INFO     [IntentWise_embeddings_generator in line None (index starts from 0)] stdout> (2, 1536)
-2023-12-02 22:54:07 +0100   47463 execution.flow     INFO     Node IntentWise_embeddings_generator completes.

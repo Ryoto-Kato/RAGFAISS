@@ -1,3 +1,0 @@
-2023-12-03 10:38:16 +0100   27571 execution.flow     INFO     Executing node endpoint_getResponse. node run id: 48e78e57-b99f-4ff6-9a99-c68124f5f7a3_endpoint_getResponse_b69fabd6-4ee7-4392-ba0d-ccff107e08ec
-2023-12-03 10:38:16 +0100   27571 execution.flow     WARNING  Output of endpoint_getResponse is not json serializable, use str to store it.
-2023-12-03 10:38:16 +0100   27571 execution.flow     INFO     Node endpoint_getResponse completes.
